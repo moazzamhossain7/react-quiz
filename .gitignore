@@ -25,3 +25,4 @@ yarn-error.log*
 # folder
 html
 /.vscode
+.eslintrc
