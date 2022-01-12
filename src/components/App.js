@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PrivetOutlet from "../auth/PrivetOutlet";
+import PublicOutlet from "../auth/PublicOutlet";
 import AuthProvider from "../contexts/AuthContext";
 import "../styles/global.css";
 import Layout from "./Layout";
@@ -15,10 +17,14 @@ function App() {
                 <Layout>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/signup" element={<Signup />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/quiz" element={<Quiz />} />
-                        <Route path="/result" element={<Result />} />
+                        <Route path="/*" element={<PublicOutlet />}>
+                            <Route path="signup" element={<Signup />} />
+                            <Route path="login" element={<Login />} />
+                        </Route>
+                        <Route path="/*" element={<PrivetOutlet />}>
+                            <Route path="quiz" element={<Quiz />} />
+                            <Route path="result" element={<Result />} />
+                        </Route>
                     </Routes>
                 </Layout>
             </AuthProvider>
