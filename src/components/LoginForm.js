@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import classes from "../styles/Login.module.css";
 import Button from "./Button";
 import Form from "./Form";
 import TextInput from "./TextInput";
@@ -32,7 +31,7 @@ export default function LoginForm() {
     }
 
     return (
-        <Form className={`${classes.login}`} onSubmit={handleSubmit}>
+        <Form style={{ height: "330px" }} onSubmit={handleSubmit}>
             <TextInput
                 type="text"
                 placeholder="Enter email"

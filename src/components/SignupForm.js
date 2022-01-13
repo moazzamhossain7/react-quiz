@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import classes from "../styles/Signup.module.css";
 import Button from "./Button";
 import Checkbox from "./Checkbox";
 import Form from "./Form";
@@ -40,7 +39,7 @@ export default function SignupForm() {
     }
 
     return (
-        <Form className={`${classes.signup}`} onSubmit={handleSubmit}>
+        <Form style={{ height: "500px" }} onSubmit={handleSubmit}>
             <TextInput
                 type="text"
                 placeholder="Enter name"
