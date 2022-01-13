@@ -39,7 +39,7 @@ export default function Quiz() {
             {error && <div>There was something went wrong!</div>}
             {!loading && !error && answers && answers.length > 0 && (
                 <>
-                    <Summary score={userScore} qna={answers.length} />
+                    <Summary score={userScore} noq={answers.length} />
                     <Analysis answers={answers} />
                 </>
             )}
